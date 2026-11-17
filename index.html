@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b13">
+<title>PASIDU MD V1 | Bot Panel</title>
+<style>
+:root{--bg:#100b13;--panel:#1b1420;--panel2:#241a2a;--pink:#ff42a1;--pink2:#ff78bd;--text:#fff7fc;--muted:#b9a9b6;--line:#38283a;--green:#58d69a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0%,#35152e 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,input{font:inherit}.shell{max-width:1120px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 2px 22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,var(--pink),#8b3dff);display:grid;place-items:center;font-size:23px;box-shadow:0 8px 28px #ff42a144}.brand h1{font-size:17px;letter-spacing:.7px;margin:0}.brand small{color:var(--muted);font-size:11px;letter-spacing:1.4px}.status{border:1px solid #28684e;color:#8df0bd;background:#123323;padding:7px 11px;border-radius:30px;font-size:12px}
+.layout{display:grid;grid-template-columns:235px 1fr;gap:18px}.side,.card{background:#1b1420dd;border:1px solid var(--line);border-radius:20px}.side{padding:15px;height:max-content}.navtitle{color:var(--muted);font-size:11px;letter-spacing:1.5px;margin:7px 10px 10px}.nav{width:100%;border:0;background:transparent;color:#d9cbd6;text-align:left;padding:12px;border-radius:12px;margin:3px 0;cursor:pointer}.nav.active,.nav:hover{background:#3a1c34;color:#fff}.nav.active{box-shadow:inset 3px 0 var(--pink)}.main{min-width:0}.welcome{margin:5px 0 18px}.welcome h2{font-size:25px;margin:0 0 4px}.welcome p{margin:0;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}.stat{padding:16px}.stat span{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:25px;margin-top:7px}.stat em{font-style:normal;color:var(--green);font-size:11px}.content{padding:19px}.content h3{margin:0 0 5px;font-size:18px}.sub{color:var(--muted);font-size:13px;margin:0 0 17px}.connectgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.connect{border:1px solid var(--line);background:var(--panel2);padding:16px;border-radius:16px}.connect .symbol{font-size:25px}.connect h4{margin:8px 0 3px}.connect p{font-size:12px;color:var(--muted);margin:0 0 13px}.btn{border:0;border-radius:11px;padding:11px 14px;background:linear-gradient(100deg,var(--pink),#d83bff);color:white;font-weight:700;cursor:pointer}.btn.secondary{background:#352638;border:1px solid #59405b}.btn:active{transform:scale(.98)}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:12px;color:#dfd0dc}.field input{width:100%;background:#100b13;border:1px solid #49374a;border-radius:10px;padding:12px;color:white;outline:none}.field input:focus{border-color:var(--pink)}.notice{background:#2c1a2a;border:1px solid #633451;color:#f4c5dd;padding:12px;border-radius:12px;font-size:12px;margin-top:14px}.hidden{display:none}.footer{text-align:center;color:#786978;font-size:11px;padding:18px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#2a1b2b;border:1px solid #75435f;padding:12px 16px;border-radius:12px;display:none;max-width:90%;box-shadow:0 8px 30px #0008}
+@media(max-width:720px){.shell{padding:12px}.layout{grid-template-columns:1fr}.side{display:flex;overflow:auto;gap:5px;padding:8px}.navtitle{display:none}.nav{white-space:nowrap;width:auto;padding:10px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.welcome h2{font-size:22px}}
+@media(max-width:420px){.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:span 2}.connectgrid{grid-template-columns:1fr}.status{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <div class="brand"><div class="logo">✦</div><div><h1>PASIDU MD V1</h1><small>WHATSAPP BOT PANEL</small></div></div>
+ <div class="status">● PANEL PREVIEW</div>
+</header>
+<div class="layout">
+ <aside class="side">
+  <div class="navtitle">MENU</div>
+  <button class="nav active" data-page="overview">⌂ &nbsp; Overview</button>
+  <button class="nav" data-page="connect">⌁ &nbsp; Connect account</button>
+  <button class="nav" data-page="settings">⚙ &nbsp; Settings</button>
+  <button class="nav" data-page="help">? &nbsp; Help</button>
+ </aside>
+ <main class="main">
+  <section class="welcome"><h2 id="pageTitle">Welcome back 👋</h2><p id="pageDesc">Manage your bot panel from one place.</p></section>
+  <section id="overview">
+   <div class="stats">
+    <div class="card stat"><span>Connected accounts</span><strong>0</strong><em>Ready when configured</em></div>
+    <div class="card stat"><span>Bot status</span><strong style="font-size:19px">Not connected</strong><em>Waiting for setup</em></div>
+    <div class="card stat"><span>Panel version</span><strong>V1.0</strong><em>Starter preview</em></div>
+   </div>
+   <div class="card content"><h3>Get started</h3><p class="sub">Connect an account after the official WhatsApp service has been configured.</p>
+    <div class="connectgrid">
+     <div class="connect"><div class="symbol">🔗</div><h4>Connect WhatsApp</h4><p>Open the account connection setup.</p><button class="btn" data-goto="connect">Open setup</button></div>
+     <div class="connect"><div class="symbol">🛠️</div><h4>Panel settings</h4><p>Review your public panel details.</p><button class="btn secondary" data-goto="settings">View settings</button></div>
+    </div>
+   </div>
+  </section>
+  <section id="connect" class="card content hidden">
+   <h3>Connect WhatsApp</h3><p class="sub">This starter panel is a visual front-end preview. It does not generate real pairing codes.</p>
+   <div class="field"><label for="phone">Business phone number (with country code)</label><input id="phone" type="tel" placeholder="+94 7X XXX XXXX"></div>
+   <button class="btn" id="connectBtn">Continue to setup</button>
+   <div class="notice">For a real public multi-user service, use Meta WhatsApp Cloud API with each business completing the official authorization flow. Never ask users to share their WhatsApp verification codes, passwords, or session files.</div>
+  </section>
+  <section id="settings" class="card content hidden">
+   <h3>Panel settings</h3><p class="sub">Basic details for the starter website.</p>
+   <div class="field"><label>Panel name</label><input value="PASIDU MD V1" readonly></div>
+   <div class="field"><label>Theme</label><input value="Pink + Black" readonly></div>
+   <div class="field"><label>Access</label><input value="Public website preview" readonly></div>
+   <div class="notice">Admin login, database storage, user management and API credentials must be added on the server before public launch.</div>
+  </section>
+  <section id="help" class="card content hidden">
+   <h3>Help & safety</h3><p class="sub">Use the service responsibly.</p>
+   <ul><li>Only connect accounts you own or are authorized to manage.</li><li>Follow WhatsApp and Meta platform policies.</li><li>Do not send unsolicited bulk messages.</li><li>Keep API secrets on the server, never in website code.</li></ul>
+  </section>
+ </main>
+</div>
+<div class="footer">PASIDU MD V1 · Starter UI · Not connected to WhatsApp yet</div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const pages={overview:["Welcome back 👋","Manage your bot panel from one place."],connect:["Connect account","Set up an authorized WhatsApp Business connection."],settings:["Panel settings","Customize your public panel."],help:["Help & safety","Important information before launch."]};
+function showPage(page){document.querySelectorAll("main section[id]").forEach(s=>s.classList.toggle("hidden",s.id!==page));document.querySelectorAll(".nav").forEach(b=>b.classList.toggle("active",b.dataset.page===page));document.getElementById("pageTitle").textContent=pages[page][0];document.getElementById("pageDesc").textContent=pages[page][1]}
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.goto)));
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",3200)}
+document.getElementById("connectBtn").addEventListener("click",()=>{const p=document.getElementById("phone").value.trim();if(!p){toast("Please enter a business phone number.");return}toast("Preview only: server-side Meta authorization is not configured yet.")});
+</script>
+</body></html>
