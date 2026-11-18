@@ -1,26 +1,19 @@
-# PASIDU MD V1 — Starter Panel
+# PASIDU MD V1 — Backend starter
 
-This is a mobile-friendly static front-end preview with a pink + black theme.
+This is a basic Node.js/Express backend starter.
 
-## Included
-- Overview dashboard
-- Connect account page (UI only)
-- Settings and help pages
-- Responsive layout for Android phones
+## Files
+- `package.json` — project details and dependencies
+- `server.js` — basic web server with a health-check route
+
+## Run locally
+1. Install Node.js.
+2. Open a terminal in this folder.
+3. Run `npm install`.
+4. Run `npm start`.
+5. Open `http://localhost:3000`.
+
+The root route returns a JSON status message.
 
 ## Important
-This is **not a working WhatsApp bot** and does not create Pair Codes or QR sessions.
-For a real public multi-user product, build the backend around Meta's official WhatsApp
-Cloud API / Embedded Signup flow. Keep access tokens and app secrets on the server.
-Add authentication, per-business data isolation, consent, rate limits, audit logs, and
-a privacy policy before opening it to the public.
-
-## Preview
-Open `index.html` in a browser.
-
-## GitHub upload from Android
-1. Sign in to GitHub in Chrome.
-2. Open your repository.
-3. Choose **Add file → Upload files**.
-4. Upload `index.html` (or upload the ZIP contents after extracting).
-5. Commit the changes.
+This starter does **not** connect to WhatsApp yet. A real WhatsApp bot needs a deployed backend and an approved WhatsApp Business Platform / Cloud API setup. Keep access tokens and other secrets in environment variables; never commit them to GitHub.
